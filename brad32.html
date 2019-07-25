@@ -1,0 +1,36 @@
+<script>
+    let counter = 0;
+    let timer = null;
+    let isRunning = false;  //boolean控制狀態
+    function start(){
+        if (isRunning) return;
+        isRunning = true;
+        timer = setInterval(doThing,1*1000)
+    }
+
+    function doThing(){
+        document.getElementById('counter').innerHTML = ++counter;
+    }
+
+    function pause(){
+        if(timer != null){
+            clearInterval(timer);
+        }
+        isRunning = false;
+    }
+
+    function zero(){
+        if(timer != null){
+            clearInterval(timer);
+        }
+        counter = 0;
+        document.getElementById('counter').innerHTML = 0;
+        isRunning = false;
+    }
+
+</script>
+Timer: <span id="counter">0</span>
+<hr>
+<input type="button" value="start" onclick="start()">
+<input type="button" value="pause" onclick="pause()">
+<input type="button" value="zero" onclick="zero()">

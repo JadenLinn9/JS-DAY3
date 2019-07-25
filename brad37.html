@@ -1,0 +1,39 @@
+<script>
+let body = document.createElement('body');
+document.body = body;
+
+let header = document.createElement('h1');
+let h1text = document.createTextNode('CY big');
+header.appendChild(h1text);
+
+document.body.appendChild(header);
+
+let hr = document.createElement('hr');
+document.body.appendChild(hr);
+
+let ul = document.createElement('ul');
+let ritem;
+for (let i = 0;i<3;i++){
+    let item = document.createElement('li');
+    item.innerHTML = `第${i+1}個項目`;
+    ul.appendChild(item);
+
+    if (i == 1) ritem = item;
+}
+ul.removeChild(ritem)
+document.body.appendChild(ul);
+
+let r2 = hr.cloneNode();   //複製當下項目而已
+document.body.appendChild(hr2);
+
+let ul2 = ul.cloneNode();  
+document.body.appendChild(ul2);
+for (let i = 0;i<3;i++){
+    let item = document.createElement('li');
+    item.innerHTML = `第${i+1}個項目`;
+    ul2.appendChild(item);
+}
+
+
+
+</script>

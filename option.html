@@ -1,0 +1,49 @@
+<script>
+    let bike = new Object();
+    document.write(typeof bike + "<br>");
+    bike.speed = 0;     //定義object的memeber
+    bike.gear = 1;
+    bike.upSpeed = function () {
+        this.speed = this.speed < 1 ? 1 : this.speed * this.gear * 1.2;   //this代表本類別物件實體(bike)
+    }
+    bike.downSpeed = function () {
+        this.speed = this.speed < 1 ? 0 : this.speed * 0.7;
+    }
+
+    bike.upSpeed(); bike.upSpeed();
+    document.write(bike.speed + "<hr>");
+
+
+    let bike2 = {           //member用,隔開,有屬性>變數,方法>function
+        speed: 0,
+        gear: 1,
+        upSpeed: function () {
+            this.speed = this.speed < 1 ? 1 : this.speed * this.gear * 1.2;
+        },
+        downSpeed: function () {
+            this.speed = this.speed < 1 ? 0 : this.speed * 0.7;
+        }
+    };
+    document.write(bike2.speed + "<br>");
+    bike2.upSpeed();bike2.upSpeed();
+    document.write(bike2.speed + "<br>");
+
+
+    bike2['upSpeed']();    //呼叫方法(),也可以為變數呼叫
+    document.write(bike2.speed + "<br>");
+
+    let method = 'upSpeed';
+    bike2[method]();
+    document.write(bike2.speed + "<hr>");
+　　　
+    for (let key in bike2) {   //尋訪bike2裡面的物件(key)
+        document.write(key + "=>" + bike2[key] + "<br>");
+    }
+    document.write("<hr>");
+
+    for (let key in history) {
+        document.write(key + "=>" + history[key] + "<br>");
+    }
+
+
+</script>
