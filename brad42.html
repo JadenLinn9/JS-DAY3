@@ -1,0 +1,18 @@
+<h1 id="head"></h1>
+<hr>
+<canvas id="canvas" width="480" height="320" style="border: 1px solid black;"></canvas>
+<script>
+    head.innerHTML = 'CY';
+    let ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(40,40,20,Math.PI/7,-Math.PI/7,false);
+    ctx.lineTo(30,40);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(190,190);
+    ctx.bezierCurveTo(12,90,45,7,87,100);
+    ctx.fill();
+
+</script>
