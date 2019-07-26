@@ -32,12 +32,12 @@
         ctx.stroke();
     }
 
-    // let ball = new Image();
-    // let ballX = 200;
-    // ball.src = 'ball.png';
-    // ball.onload = function(){
-    //     ctx.drawImage(ball,ballX,100);
-    // }
+    let ball = new Image();
+    let ballX = 200;
+    ball.src = 'ball.png';
+    ball.onload = function(){
+        ctx.drawImage(ball,ballX,100);
+    }
 
     function moveLeft(){
         ballX -= 8;
